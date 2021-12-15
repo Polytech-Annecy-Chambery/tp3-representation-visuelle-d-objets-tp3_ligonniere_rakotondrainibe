@@ -16,28 +16,28 @@ import copy
 
 
 def Q1a():
-    pass
+    return Configuration()
     
 def Q1b_f():
-    return Configuration({'screenPosition': -5, 'xAxisColor': [1, 1, 0]}). \
-        setParameter('xAxisColor', [1, 1, 0]). \
-        setParameter('yAxisCo lor', [0,1,1]). \
+    return Configuration({'screenPosition': -5, 'xAxisColor': [0,255,0]}).\
+        setParameter('xAxisColor', [255,0,0]).\
+        setParameter('yAxisColor', [0,255,0]).\
         display()
-        
 def Q2b():
     # Ecriture en utilisant le chaînage
     return Configuration().add(
             Section({'position': [1, 1, 0], 'width':7, 'height':2.6})
-            ) 
+            ).display() 
 
 def Q2c():
     # Ecriture en utilisant le chaînage
-    return Configuration().add(
-            Section({'position': [1, 1, 0], 'width':7, 'height':2.6, 'edges': True})
-            )
+    pass
+    
 
 def Q3a():
-    pass  
+    return Configuration().add(
+            Wall({'position': [1, 1, 0], 'width':7, 'height':2.6, 'edges': True , 'orientation' : 90.0})
+            ).display
 
 def Q4a():
     # Ecriture en utilisant des variables : A compléter
@@ -94,11 +94,11 @@ def Q6():
 def main():
     # Enlever un des commentaires pour la question traitée
     
-    configuration = Q1a()
+    # configuration = Q1a()
     # configuration = Q1b_f()
     # configuration = Q2b()
     # configuration = Q2c()
-    # configuration = Q3a()
+    configuration = Q3a()
     # configuration = Q4a()
     # configuration = Q5a()
     # configuration = Q5b()

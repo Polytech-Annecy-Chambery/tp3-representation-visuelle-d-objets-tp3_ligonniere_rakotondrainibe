@@ -10,6 +10,7 @@ from Section import Section
 class Wall:
     # Constructor
     def __init__(self, parameters = {}) :  
+        
         # Parameters
         # position: position of the wall 
         # width: width of the wall - mandatory
@@ -69,5 +70,16 @@ class Wall:
     # Draws the faces
     def draw(self):
         # A compléter en remplaçant pass par votre code
-        pass
+        for i in self.faces:
+            gl.glPushMatrix()
+            gl.glPolygonMode(gl.GL_FRONT_AND_BACK, gl.GL_FILL) # on trace les faces : GL_FILL
+            gl.glRotatef(self.parameters['orientation'] , 0,0,1)
+            gl.glBegin(gl.GL_QUADS) # Tracé d’un quadrilatère
+            gl.glColor3fv([255, 0, 0]) # Couleur gris moyen
+            gl.glVertex3fv(self.vertices[i[0]])
+            gl.glVertex3fv(self.vertices[i[1]])
+            gl.glVertex3fv(self.vertices[i[2]])
+            gl.glVertex3fv(self.vertices[i[3]])
+            gl.glEnd()
+            gl.glPopMatrix()
   
